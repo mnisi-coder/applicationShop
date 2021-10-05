@@ -1,0 +1,49 @@
+<div class="center">
+    <div >
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-1">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="parent"><img class="img-thumbnail h-5 w-100  d-block"
+                                    src={{product.imageURL}} alt="Slide Image" loading="lazy"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-7">
+                    <h4>{{product.name}}</h4>
+                    <div class="price"><span class="mr-2"><i class="fa fa-rupee text-success"></i>R{{product.qty}}</span>
+                    </div>
+
+                    <hr>
+                    <div class="productDesc">
+                        <b>Description</b>
+                        <div class="d-flex align-items-center mt-4 offers mb-1"><i
+                                class="fa fa-check-square-o mt-1"></i><span class="ml-1">{{product.Description}}<br></span></div>
+                        
+                      
+
+                                    
+                                    
+                    </div>
+
+                    
+
+                        <div class="mt-5">
+                            <button (click)="addCart(product)" class="btn btn-success mr-2" type="button"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-cart3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                </svg></button>
+                                
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="center" *ngIf="allCartProduct.length != 0">
+    <div class="container">
+    <table id="cart" class="table table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="width:50%">Product</th>
+                            <th style="width:10%">Price</th>
+                            <th style="width:8%">Quantity</th>
+                            <th style="width:22%" class="text-center">Subtotal</th>
+                            <th style="width:10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of allCartProduct; let i = index">
+                            <td data-th="Product" >
+                                <div class="row" >
+                                    <div class="col-sm-2 hidden-xs"><img src={{item.imageURL}} alt="..." class="img-responsive"/></div>
+                                    <div class="col-sm-10">
+                                        <h4 class="nomargin">{{item.name}}</h4>
+                                        <p>{{item.Description}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                        
+                            
+                            <td data-th="Price">{{item.qty |currency:'R'}}</td>
+                            
+                            
+                            <td data-th="Quantity"  >
+                                <!--<tr ><button type="button" class="btn" (click)= "inc(item.qty)"><i class="fa fa-plus"></i></button></tr>-->
+                                <input type="number" class="form-control text-center" min="1" max="item.length" readonly  value="1">  
+                               <!--<tr><button type="button" class="btn" (click)="dec(item.qty)"><i class="fa fa-minus"></i></button></tr>-->
+                            </td>
+                
+            
+                    <td data-th="Subtotal" class="text-center"> {{Sub|currency:'R'}}</td>
+                    <td class="actions" data-th="">
+
+                        <!-- <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>-->
+                        <button (click)="deleteItem(item)"class="btn btn-danger btn-sm" ><i class="fa fa-trash-o"></i></button> 
+                    </td>
+
+                
+                           
+                        </tr>
+                    </tbody>
+                     <tfoot>
+                        <tr class="visible-xs">
+                            <td class="text-center"><strong>Total 1.99</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a routerLink="/viewAll" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                            <td colspan="2" class="hidden-xs"></td>
+                            <td class="hidden-xs text-center"><strong>Total : {{totalAmount.toFixed(2)|currency:'R'}}</strong></td>
+                            <td><a routerLink="/checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                        </tr>
+                    </tfoot> 
+                </table>
+</div>
+</div>
+
+
+    <div  *ngIf="allCartProduct.length == 0">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Cart</h5>
+                    </div>
+                    <div class="card-body cart">
+                        <div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+                            <h3><strong>Your Cart is Empty</strong></h3>
+                            <h4>Add something to make me happy :)</h4> <a routerLink="/viewAll"  class="btn btn-success cart-btn-transform m-3" data-abc="true">continue shopping</a>
+                        </div>
+                    </div> 
+
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,54 @@
+
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h2><b>Search Results For {{product}}</b></h2>
+                    </div>
+                    <div class="col-xs-7">
+                        						
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!--Here we will view all searched Items-->
+            <div class="page" *ngIf="products.length != 0">
+                <div class="page">
+                    <!--For Row containing all card-->
+                    <div class="row" >
+                       <!--Card -->
+                        <div class="col-sm-3" *ngFor="let prod of products; index as i">
+                            <div class="card card-cascade card-ecommerce wider shadow mb-5 " >
+                                <!--Card image-->
+                                <div class="view view-cascade overlay text-center"> <img class="card-img-top" src={{prod.imageURL}} alt=""> <a>
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a> </div>
+                                 <!--Card Body-->
+                                <div class="card-body card-body-cascade text-center">
+                                  
+                                    <!--Card Title-->
+                                    <a routerLink="/singleProduct"> <h4  (click)="submit(prod)"  class="card-title"><p><a href="">{{prod.name}}</a></p> <span class="d-block g-color-primary g-font-size-10">R{{prod.qty}}</span></h4> 
+                                
+                                </a></div>
+                                
+                              
+                        </div>
+                    </div>
+               
+            </div>
+           
+
+    <!--Tis is the end of the view-->
+        </div>
+        </div> 
+
+        <div class="page" *ngIf="products.length == 0">
+            <p class="center"><b>SEARCH RESULTS NOT FOUND FOR {{product}}</b></p>
+        </div>
+    
+        
+</div> 
+

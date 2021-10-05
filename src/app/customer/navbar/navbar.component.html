@@ -1,0 +1,51 @@
+<!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+      <!-- Left elements -->
+      <div class="d-flex">
+        <!-- Brand -->
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center"  routerLink="/viewAll" >
+          <img
+            src="https://image.shutterstock.com/image-vector/electricity-logo-260nw-416654494.jpg"
+            height="40"
+            alt=""
+            loading="lazy"
+            style="margin-top: 2px;"
+          />
+        </a>
+  
+        <!-- Search form -->
+        
+         <!--- <input
+            autocomplete="off"
+            type="search "
+            class="form-control rounded"
+            placeholder="Search product"
+            style="min-width: 125px;"
+          />
+          <span class="input-group-text border-0 d-none d-lg-flex"
+            ><i class="fas fa-search"></i
+          ></span> -->
+
+          <input type="text" class="form-control" class="resizedTextbox" [(ngModel)]="name" placeholder="Search product..." aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button (click)="submit()" class="btn btn-outline-success btn-sm" type="button" id="button-addon2">SEARCH</button>
+        
+
+        
+      </div>
+      <!-- Left elements -->
+  
+
+  
+      <!-- Right elements -->
+      <ul class="navbar-nav flex-row" ><a routerLink="/adminView" >ADMIN</a>
+        <li><br></li>
+      <a routerLink="/cart" > 
+            <i class="fa" style="font-size:24px">&#xf07a;</i>
+            <span class='badge badge-warning' id='lblCartCount'> {{allCartProduct.length}} </span>
+          </a>
+      </ul>
+      <!-- Right elements -->
+    </div>
+  </nav>
+  <!-- Navbar -->

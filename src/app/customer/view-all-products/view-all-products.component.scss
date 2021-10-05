@@ -1,0 +1,29 @@
+.card-img-top {
+    width: 90%;
+    height: 225px
+}
+.card {
+    width: 95%;
+    padding: 0px;
+    height: 90%;
+    margin-left: 2%
+}
+p{
+    color:green;
+    font-family: FreeMono;
+}
+a{
+    color:black;
+}
+.center
+{
+    overflow:auto; 
+    z-index:999; 
+   
+  
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+}

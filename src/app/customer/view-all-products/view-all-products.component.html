@@ -1,0 +1,24 @@
+<div class="center">
+<!--For Page-->
+<div class="page">
+    <!--For Row containing all card-->
+    <div class="row" >
+       <!--Card -->
+        <div class="col-sm-3" *ngFor="let prod of products; index as i">
+            <div class="card card-cascade card-ecommerce wider shadow mb-5 " >
+                <!--Card image-->
+                <div class="view view-cascade overlay text-center"> <img class="card-img-top" src={{prod.imageURL}} alt=""> <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a> </div>
+                 <!--Card Body-->
+                <div class="card-body card-body-cascade text-center">
+                  
+                    <!--Card Title-->
+                    <a routerLink="/singleProduct"><h4 (click)="submit(prod)" class="card-title"><p><a href="">{{prod.name}}</a></p> <span class="d-block g-color-primary g-font-size-10"><b>R{{prod.qty}}</b></span></h4> 
+                
+                </a></div>
+                
+              
+        </div>
+    </div>
+</div>
